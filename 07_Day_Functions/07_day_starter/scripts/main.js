@@ -138,6 +138,13 @@ const findMax = (a, b, c) => {
 };
 // Exercises: Level 2
 // =============================1=============================
+const solveLinEquation = (a, b, c) => {
+  m = -a / b;
+  b = -c / b;
+  return `La pendiente es: ${m.toFixed(2)} y la ordenada es: ${b.toFixed(2)}`;
+};
+
+solveLinEquation(12, 2, -6);
 // =============================2=============================
 const solveQuadratic = (a, b, c) => {
   let firstPart = -b;
@@ -205,9 +212,59 @@ const addItem = (item) => {
   return arr;
 };
 // =============================9=============================
+const removeItem = (index) => {
+  arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  if (index < arr.length) {
+    arr.splice(index, 1);
+    return arr;
+  } else {
+    return `El index ${index} es mayor que los index totales del array`;
+  }
+};
+removeItem(5);
 // =============================10============================
+const sumOfNumbers = (...num) => {
+  let sum = 0;
+  if (num.length > 1) {
+    for (let e of num) {
+      sum += e;
+    }
+    return sum;
+  } else {
+    return "You need to enter more than two numbers";
+  }
+};
+sumOfNumbers(2, 2);
 // =============================11============================
+const sumOfOdds = (...num) => {
+  let sum = 0;
+  let odd = [];
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] % 2 === 1) {
+      odd.push(num[i]);
+    }
+  }
+  for (let e of odd) {
+    sum += e;
+  }
+  return sum;
+};
+sumOfOdds(3, 2, 5, 2, 1);
 // =============================12============================
+const sumOfEven = (...num) => {
+  let sum = 0;
+  let even = [];
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] % 2 === 0) {
+      even.push(num[i]);
+    }
+  }
+  for (let e of even) {
+    sum += e;
+  }
+  return sum;
+};
+sumOfEven(3, 2, 5, 2, 1);
 // =============================13============================
 // =============================14============================
 // =============================15============================
