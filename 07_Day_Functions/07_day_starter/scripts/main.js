@@ -266,11 +266,72 @@ const sumOfEven = (...num) => {
 };
 sumOfEven(3, 2, 5, 2, 1);
 // =============================13============================
+const evensAndOdds = (num) => {
+  arrEven = [];
+  arrOdd = [];
+  for (let i = 0; i <= num; i++) {
+    i % 2 == 0 ? arrEven.push(i) : arrOdd.push(i);
+    continue;
+  }
+  return `El número de impares es: ${arrOdd.length} 
+  El número de pares es: ${arrEven.length}`;
+};
+evensAndOdds(100);
 // =============================14============================
+const sumNum = (...num) => {
+  let result = 0;
+  for (const i of num) {
+    result = result + i;
+  }
+  return result;
+};
+sumNum(1, 2, 3);
 // =============================15============================
+const randomUserIp = () => {
+  ip = "172.";
+  const num = Math.round(Math.random() * (31 - 28) + 28);
+  const num2 = Math.round(Math.random() * 255);
+  const num3 = Math.round(Math.random() * 255);
+  ip = ip + num + "." + num2 + "." + num3;
+  return ip;
+};
+randomUserIp();
 // =============================16============================
+const randomMacAddress = () => {
+  const hex = "0123456789abcdef";
+  let macAddres = "";
+  let mac = [];
+  while (mac.length < 6) {
+    for (let i = 0; i < 2; i++) {
+      macAddres += hex.charAt(Math.floor(Math.random() * hex.length));
+    }
+    mac.push(macAddres);
+    macAddres = "";
+  }
+  result = mac.toString();
+  return result.replaceAll(",", ":");
+};
+randomMacAddress();
 // =============================17============================
+const randomHexaNumberGenerator = () => {
+  const char = "0123456789abcdef";
+  let hexa = "#";
+  for (let i = 0; i < 6; i++) {
+    hexa += char.charAt(Math.floor(Math.random() * char.length));
+  }
+  return hexa;
+};
+randomHexaNumberGenerator();
 // =============================18============================
+const userIdGenerator = () => {
+  const char = "abcdefghijklmnopqrstuvwxyz0123456789";
+  let id = " ";
+  for (let i = 0; i < 7; i++) {
+    id += char.charAt(Math.floor(Math.random() * char.length));
+  }
+  return id;
+};
+userIdGenerator();
 // Exercises: Level 3
 // =============================1=============================
 // =============================2=============================
