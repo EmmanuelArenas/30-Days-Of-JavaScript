@@ -334,10 +334,110 @@ const userIdGenerator = () => {
 userIdGenerator();
 // Exercises: Level 3
 // =============================1=============================
+
+const userIdGeneratedByUser = () => {
+  let char = prompt("Ingrese el numero de caracteres que tendra el ID");
+  let ide = prompt("Ingrese la cantidad de ID's que desea generar");
+  const str = "abcdefghijklmnopqrstuvwxyz0123456789";
+  let id = " ";
+  let arr = [];
+  while (arr.length < ide) {
+    for (let i = 0; i < char; i++) {
+      id += str.charAt(Math.floor(Math.random() * str.length));
+    }
+    arr.push(id);
+    id = "";
+  }
+  return arr;
+};
+console.log(userIdGeneratedByUser());
 // =============================2=============================
+const rgbColorGenerator = () => {
+  let rgb = [];
+  while (rgb.length < 3) {
+    acc = "";
+    acc = Math.floor(Math.random() * 256);
+    rgb.push(acc);
+  }
+  return `rgb(${rgb.toString()})`;
+};
+
+rgbColorGenerator();
 // =============================3=============================
+const arrayOfHexaColors = () => {
+  const character = "0123456789abcdef";
+  let hex = "#";
+  let arr = [];
+  random = Math.floor(Math.random() * (10 - 1) + 1);
+  while (arr.length < random) {
+    for (let i = 0; i < 6; i++) {
+      hex += character.charAt(Math.floor(Math.random() * character.length));
+    }
+    arr.push(hex.toUpperCase());
+    hex = "#";
+  }
+  return arr;
+};
+arrayOfHexaColors();
 // =============================4=============================
+const arrayOfRgbColors = () => {
+  random = Math.floor(Math.random() * (10 - 1) + 1);
+  let rgb = [];
+  let arrRGB = [];
+  while (arrRGB.length < random) {
+    while (rgb.length < 3) {
+      acc = "";
+      acc = Math.floor(Math.random() * 256);
+      rgb.push(acc);
+    }
+    arrRGB.push(`rgb(${rgb.toString()})`);
+  }
+  return arrRGB;
+};
+arrayOfRgbColors();
 // =============================5=============================
+const convertHexaToRgb = (hex) => {
+  let newArr = hex.toUpperCase().split("");
+  let Arr = [];
+  let color = [];
+  let i = 0;
+  for (let i in newArr) {
+    switch (newArr[i]) {
+      case "A":
+        newArr[i] = 10;
+        continue;
+      case "B":
+        newArr[i] = 11;
+        continue;
+      case "C":
+        newArr[i] = 12;
+        continue;
+      case "D":
+        newArr[i] = 13;
+        continue;
+      case "E":
+        newArr[i] = 14;
+        continue;
+      case "F":
+        newArr[i] = 15;
+        continue;
+      default:
+        break;
+    }
+  }
+  while (i < newArr.length) {
+    Arr.push(newArr.slice(i, i + 2));
+    i += 2;
+  }
+  for (let i in Arr) {
+    const R = Arr[i];
+    let red = R[0] * 16 + +R[1];
+    color.push(red);
+  }
+  return `rgb (${color})`;
+};
+// #19BD1E -> RGB(25,189,30)
+convertHexaToRgb("19BD1E");
 // =============================6=============================
 // =============================7=============================
 // =============================8=============================
